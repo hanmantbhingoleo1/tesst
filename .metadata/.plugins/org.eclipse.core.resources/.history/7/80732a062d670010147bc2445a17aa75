@@ -1,0 +1,63 @@
+// TradeExecutor.java
+package com.tradingbot;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
+
+@Service
+public class TradeExecutor {
+
+    @Autowired
+    private StrategyService strategyService;
+
+    @Autowired
+    private FyersApiService fyersApiService;
+
+    @Scheduled(fixedRate = 60000) // every 1 min
+    public void monitorMarket() {
+        if (!fyersApiService.isExpiryDay()) return;
+
+        for (String symbol : fyersApiService.getWatchlistSymbols()) {
+            double ltp = fyersApiService.fetchLTP(symbol);
+
+            if (strategyService.shouldTriggerTrade(symbol, ltp)) {
+                fyersApiService.placeOrder(symbol, strategyService.getTradeSide(), strategyService.getLotSize(), strategyService.calculateStopLoss(symbol, ltp));
+                strategyService.recordTrade(symbol, ltp);
+            }
+        }
+    }
+}
+
+
+// JavaFXDashboard.java
+package com.tradingbot;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class JavaFXDashboard extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        VBox root = new VBox();
+        root.setSpacing(10);
+
+        Label statusLabel = new Label("Trading Bot Dashboard");
+        Label botStatus = new Label("Status: Running");
+
+        root.getChildren().addAll(statusLabel, botStatus);
+
+        Scene scene = new Scene(root, 400, 200);
+        stage.setTitle("Trading Bot Dashboard");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+}

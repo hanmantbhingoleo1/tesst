@@ -1,0 +1,5 @@
+package com.tradingbot.util;
+
+public class TOTPGenerator {
+
+}

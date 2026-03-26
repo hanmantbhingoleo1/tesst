@@ -1,0 +1,5 @@
+package com.tradingbot.service;
+
+public class TradeExecutor {
+
+}

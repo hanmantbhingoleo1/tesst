@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.tradingbot.model.Trade.java&apos; to &apos;TradeRequest.java&apos;&#x0D;&#x0A;- Original project: &apos;automated-trading-bot&apos;&#x0D;&#x0A;- Original element: &apos;com.tradingbot.model.Trade.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.tradingbot.model.TradeRequest.java&apos;" description="Rename compilation unit &apos;Trade.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.tradingbot.model{Trade.java" name="TradeRequest.java" references="false" stamp="1753208613651" version="1.0"/>
+</session>

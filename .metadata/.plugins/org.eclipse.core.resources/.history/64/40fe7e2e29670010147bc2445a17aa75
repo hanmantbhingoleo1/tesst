@@ -1,0 +1,5 @@
+package com.tradingbot.model;
+
+public class TradeResponse {
+
+}

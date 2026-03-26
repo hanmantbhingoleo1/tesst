@@ -1,0 +1,62 @@
+package com.tradingbot.model;
+
+package com.tradingbot.model;
+
+public class TradeRequest {
+    private String symbol;
+    private String expiry;
+    private String optionType; // CALL or PUT
+    private double entryPrice;
+    private double stopLoss;
+    private double target;
+
+    // Getters and Setters
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public String getExpiry() {
+        return expiry;
+    }
+
+    public void setExpiry(String expiry) {
+        this.expiry = expiry;
+    }
+
+    public String getOptionType() {
+        return optionType;
+    }
+
+    public void setOptionType(String optionType) {
+        this.optionType = optionType;
+    }
+
+    public double getEntryPrice() {
+        return entryPrice;
+    }
+
+    public void setEntryPrice(double entryPrice) {
+        this.entryPrice = entryPrice;
+    }
+
+    public double getStopLoss() {
+        return stopLoss;
+    }
+
+    public void setStopLoss(double stopLoss) {
+        this.stopLoss = stopLoss;
+    }
+
+    public double getTarget() {
+        return target;
+    }
+
+    public void setTarget(double target) {
+        this.target = target;
+    }
+}
+

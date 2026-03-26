@@ -1,0 +1,25 @@
+# Database Configuration
+# URL to connect to the MySQL database named 'prakashdemo' running on localhost
+spring.datasource.url=jdbc:mysql://localhost:3306/prakashdemo
+
+# MySQL database credentials (update with your actual username and password)
+spring.datasource.username=root
+spring.datasource.password=root
+
+# MySQL JDBC Driver
+# This specifies the driver class needed to connect to MySQL
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+
+# Hibernate Property
+# 'update' allows Hibernate to automatically create/update database tables based on entities
+# Change to 'create' if you want the database schema to be recreated each time the application starts
+spring.jpa.hibernate.ddl-auto=update
+
+# Show SQL Queries in the Console
+# Enabling this helps in debugging by printing the generated SQL queries in the logs
+spring.jpa.show-sql=true
+
+server.port=8081
+

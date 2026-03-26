@@ -1,0 +1,19 @@
+package com.tradingbot;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.client.RestTemplate;
+@EnableScheduling
+@SpringBootApplication
+public class TradingBotApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(TradingBotApplication.class, args);
+        System.out.println("Trading Bot Started Successfully...");
+    }
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+
+}
